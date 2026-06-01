@@ -71,9 +71,36 @@ Dopo l'installazione, frasi che attivano Deliberato:
 
 ## Roadmap
 
-- **Fase 1 (attuale)**: modalità Marketing & AI Strategy
-- **Fase 2**: modalità "Decisioni Founder generaliste" (go/no-go su hiring, pivot, pricing, partnership)
-- **Fase 3**: ulteriori modalità in base ai feedback (negoziazione professionale, valutazione investimenti, altre)
+**Fase 1 (attuale)** — modalità Marketing & AI Strategy
+
+**Fase 2** — nuove modalità, in ordine di priorità da definire con i feedback:
+
+*Hiring e team*
+- Primo dipendente: assunzione vs continuare con freelance
+- Generalista vs specialista alla prima assunzione
+- Quando assumere in-house vs esternalizzare una funzione
+
+*Pricing e modello di ricavo*
+- Freemium vs paid from day 1
+- Cambio modello (subscription vs one-time vs usage-based)
+- Aumento prezzi su base clienti esistente
+
+*Direzione strategica*
+- Quando abbandonare una feature o un prodotto
+- Pivot parziale vs totale: quando e come
+- Entrare in un nuovo segmento: espansione vs focus
+
+*Partnership e distribuzione*
+- Partnership esclusiva vs non esclusiva
+- Canale diretto vs marketplace vs rivenditore
+- White-label vs branded
+
+*Capitali e finanza*
+- Bootstrap vs round di investimento: quando alzare il capitale
+- Valutare un'offerta di investimento con condizioni specifiche
+- Timing del fundraising rispetto alle metriche attuali
+
+**Fase 3** — modalità in base ai feedback (negoziazione professionale, altre da definire)
 
 Filosofia: una sola skill che cresce nel tempo, non una proliferazione di skill separate.
 
