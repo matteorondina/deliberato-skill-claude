@@ -18,10 +18,10 @@ description: |
   domande di opinione senza decisione strutturata ("che ne pensi di Y"), 
   task di esecuzione tecnica.
   
-  Modalità attive: "Marketing & AI Strategy" (decisioni su strategia 
-  marketing, stack AI, build vs buy, prioritizzazione iniziative, 
-  posizionamento) e "Pricing" (modello di prezzo, freemium vs paid, 
-  aumento prezzi, cambio modello di ricavo).
+  Modalità attive: "Marketing & AI Strategy" (strategia marketing, stack AI, 
+  build vs buy, posizionamento), "Pricing" (modello di prezzo, freemium vs 
+  paid, aumento prezzi, cambio modello di ricavo), "Hiring e Team" (primo 
+  dipendente, assunzione vs freelance, generalista vs specialista).
 ---
 
 # Deliberato
@@ -52,8 +52,9 @@ Deliberato convoca un council di 4 advisor AI per analizzare decisioni strategic
 |---|---|---|
 | Marketing & AI Strategy | `modes/marketing-ai-strategy.md` | Strategia marketing, stack AI, build vs buy, prioritizzazione iniziative, posizionamento |
 | Pricing | `modes/pricing.md` | Modello di prezzo, freemium vs paid, aumento prezzi, cambio modello di ricavo |
+| Hiring e Team | `modes/hiring.md` | Primo dipendente, assunzione vs freelance, generalista vs specialista, in-house vs esternalizzare |
 
-*L'architettura è predisposta per ospitare altre modalità (hiring, pivot, partnership, capitali). Queste verranno aggiunte nelle release successive.*
+*L'architettura è predisposta per ospitare altre modalità (pivot, partnership, capitali). Queste verranno aggiunte nelle release successive.*
 
 ## Il flusso di una sessione
 
@@ -63,6 +64,7 @@ Quando la skill si attiva, l'orchestratore identifica la modalità appropriata i
 
 - Se la decisione riguarda strategia marketing, stack tecnologico, build vs buy, posizionamento → **Marketing & AI Strategy**
 - Se la decisione riguarda prezzo, modello di ricavo, freemium, aumento prezzi → **Pricing**
+- Se la decisione riguarda assunzioni, composizione del team, freelance vs dipendente → **Hiring e Team**
 
 Se il contesto non è chiaro, presenta le opzioni all'utente con una riga di descrizione ciascuna e chiedi quale si applica. Una volta identificata la modalità, comunica: *"Avvio Deliberato in modalità [nome modalità]."*
 
