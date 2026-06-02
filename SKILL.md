@@ -5,16 +5,21 @@ description: |
   analizzare da 5 advisor AI con prospettive diverse, peer review anonima e 
   sintesi finale del chairman. Pensata per founder e PMI italiane.
   
-  TRIGGER PRINCIPALI (sempre attivano): "delibera questa decisione", 
-  "convoca il council", "council questa decisione", "fai partire il council", 
-  "passa al council", "delibera questa scelta", "metti alla prova questa 
-  decisione", "stresstest questa scelta", "demolisci questa idea", 
-  "trova i buchi in questo piano".
+  TRIGGER FULL COUNCIL (attivano il flusso completo — 5 advisor + peer review): 
+  "delibera questa decisione", "convoca il council", "council questa decisione", 
+  "fai partire il council", "passa al council", "delibera questa scelta", 
+  "metti alla prova questa decisione", "stresstest questa scelta", 
+  "demolisci questa idea", "trova i buchi in questo piano".
   
-  TRIGGER CONTESTUALI (attivano solo se c'è una decisione reale con trade-off 
-  multipli e stakes significativi): "devo decidere se X o Y", "non so se conviene 
-  Z", "vale la pena W", "mi conviene", "che faccio tra A e B", "sono convinto 
-  di fare X ma voglio un contraddittorio", "ho già deciso, dimmi dove sbaglio".
+  TRIGGER FAST COUNCIL (attivano il flusso rapido — 3 advisor, chairman diretto):
+  "check questa decisione", "parere rapido", "analisi rapida", "check rapido",
+  "quick council", "parere veloce", "sintesi rapida su questa decisione".
+  
+  TRIGGER CONTESTUALI (attivano Full Council solo se c'è una decisione reale con 
+  trade-off multipli e stakes significativi): "devo decidere se X o Y", "non so se 
+  conviene Z", "vale la pena W", "mi conviene", "che faccio tra A e B", "sono 
+  convinto di fare X ma voglio un contraddittorio", "ho già deciso, dimmi dove 
+  sbaglio".
   
   NON TRIGGERARE su: domande factual ("quanto costa X"), scelte triviali 
   ("uso markdown o no"), richieste di scrittura ("scrivimi una mail"), 
@@ -32,7 +37,7 @@ description: |
 
 # Deliberato
 
-Deliberato convoca un council di 4 advisor AI per analizzare decisioni strategiche complesse. Ogni advisor guarda la decisione da un angolo diverso, si rivedono a vicenda in anonimo, un chairman sintetizza il verdetto. Pensato per founder e PMI italiane che affrontano decisioni strategiche senza un board di consulenti fisici.
+Deliberato convoca un council di advisor AI per analizzare decisioni strategiche complesse. Esiste in due velocità: **Full Council** (5 advisor, peer review anonima, chairman synthesis — per decisioni critiche) e **Fast Council** (3 advisor, chairman diretto, senza peer review — per decisioni importanti ma non irreversibili). Ogni advisor guarda la decisione da un angolo diverso. Pensato per founder e PMI italiane che affrontano decisioni strategiche senza un board di consulenti fisici.
 
 ## Quando si attiva
 
@@ -66,6 +71,18 @@ Deliberato indirizza automaticamente la domanda alla modalità appropriata.
 | Capitali e Finanza | `modes/capitali-finanza.md` | Bootstrap vs round, valutare un'offerta di investimento, scegliere tra investitori, timing del fundraising |
 
 ## Il flusso di una sessione
+
+Deliberato opera in due modalità di esecuzione:
+
+| | Full Council | Fast Council |
+|---|---|---|
+| Trigger | "delibera questa decisione", "convoca il council"… | "check questa decisione", "parere rapido"… |
+| Advisor | 5 in parallelo | 3 in parallelo (i primi 3 del file modalità) |
+| Peer review | Sì — 5 reviewer anonimi | No |
+| Chiamate LLM | ~11 | ~4 |
+| Quando usarlo | Decisioni irreversibili, alto impatto, trade-off complessi | Decisioni importanti ma correggibili, quando serve velocità |
+
+Se il trigger è **Fast Council**, vai direttamente alla sezione [Fast Council](#fast-council) in fondo a questo file — salta il flusso qui sotto.
 
 ### Step 1 — Identificazione modalità
 
@@ -210,9 +227,97 @@ politicamente corretto.
 
 Il verdetto viene presentato direttamente in chat in markdown, senza generare file. Eccezione: se l'utente chiede esplicitamente di salvare il transcript, salva un file `transcript-deliberato-{YYYYMMDD-HHmm}.md` nella cartella corrente (o `./active/` se esiste).
 
+## Fast Council
+
+Flusso abbreviato per decisioni importanti che non richiedono il processo completo. Attivato dai trigger Fast Council definiti nel frontmatter.
+
+### FC-Step 1 — Identificazione modalità
+
+Identica al Full Council: stessa logica di routing verso le 6 modalità. Stessa comunicazione: *"Avvio Deliberato Fast Council in modalità [nome modalità]."*
+
+### FC-Step 2 — Intake rapido (2 domande)
+
+Poni solo due domande, in un unico messaggio:
+
+1. **La decisione** — Qual è la scelta concreta? Descrivi le opzioni o il go/no-go.
+2. **Cosa è in gioco** — Cosa succede se sbagli? Cosa succede se aspetti? C'è una deadline reale?
+
+Se l'utente ha già fornito entrambe le informazioni nel messaggio iniziale, salta l'intake e segnala: *"Ho abbastanza contesto per procedere."*
+
+### FC-Step 3 — Convocazione 3 advisor (in parallelo)
+
+Spawna 3 sub-agenti in parallelo usando i **primi 3 advisor** definiti nel file della modalità attiva (Advisor 1, 2, 3). Stessi prompt template completi del Full Council — inclusi guardrail specifici. Lunghezza invariata: 200-300 parole ciascuno.
+
+I primi 3 advisor per modalità:
+
+| Modalità | Advisor 1 | Advisor 2 | Advisor 3 |
+|---|---|---|---|
+| Marketing & AI Strategy | Lo Stratega di Prodotto | L'Economista Pragmatico | Il Realista Operativo |
+| Pricing | Lo Stratega del Valore | L'Analista di Unit Economics | Il Comportamentalista |
+| Hiring e Team | Lo Stratega del Team | Il Numerico | Il Costruttore di Cultura |
+| Direzione Strategica | L'Analista dei Segnali | Il Guardiano del Focus | Il Costruttore di Moat |
+| Partnership e Distribuzione | Lo Stratega del Canale | Il Negoziatore | Il Realista delle Dipendenze |
+| Capitali e Finanza | Il Custode della Missione | Il Matematico del Capitale | Il Conoscitore di Investitori |
+
+### FC-Step 4 — Chairman synthesis diretta
+
+Il chairman riceve il brief e le 3 risposte de-anonimizzate. Nessuna peer review. Produce un verdetto compatto.
+
+Prima di costruire il prompt, controlla se il file della modalità attiva contiene una sezione `## Istruzioni per il chairman`. Se presente, applica anche qui.
+
+Prompt template chairman Fast Council:
+
+```
+Sei il Chairman di un council deliberativo. Tre advisor hanno analizzato 
+questa decisione da angoli diversi. Sintetizza in un verdetto diretto.
+
+La decisione portata al council:
+
+---
+{brief_inquadrato}
+---
+
+RISPOSTE DEGLI ADVISOR:
+
+**{advisor_1_nome}:** {risposta_1}
+**{advisor_2_nome}:** {risposta_2}
+**{advisor_3_nome}:** {risposta_3}
+
+Produci il verdetto usando ESATTAMENTE questa struttura:
+
+## Verdetto Fast Council: {topic_breve}
+
+### Dove il council converge
+{1_2_punti_di_accordo_tra_advisor}
+
+### Il disaccordo principale
+{se_esiste_un_disaccordo_genuino_presentalo_con_entrambi_i_lati — 
+se_non_esiste_scrivi_"Nessun disaccordo rilevante."}
+
+### La raccomandazione
+{raccomandazione_chiara_senza_hedge}
+
+### Confidence
+ALTA / MEDIA / BASSA — {motivazione_1_frase}
+
+### Prossime 24 ore
+{una_cosa_concreta_da_fare_subito}
+
+---
+*Questo verdetto non sostituisce consulenza legale, finanziaria o fiscale 
+specialistica. Verificare aspetti compliance (GDPR/AI Act) con specialista 
+quando rilevante.*
+
+Sii diretto. Se un advisor ha l'argomento più forte, schierati con lui — 
+anche se è in minoranza. Niente equilibrio diplomatico.
+```
+
+Il verdetto viene presentato direttamente in chat in markdown. Alla fine, offri l'opzione: *"Vuoi il Full Council su questa decisione per un'analisi più approfondita con peer review?"*
+
 ## Note importanti
 
-- Sempre 5 advisor in parallelo, mai sequenziali. La parallelizzazione previene il bias di chi parla per primo.
+- **Full Council**: sempre 5 advisor in parallelo, mai sequenziali. La parallelizzazione previene il bias di chi parla per primo.
+- **Fast Council**: 3 advisor in parallelo, nessuna peer review, chairman diretto. Offri sempre il passaggio al Full Council alla fine del verdetto fast.
 - Anonimizza sempre le risposte nella peer review. Se i reviewer sanno chi ha scritto cosa, tendono a deferire allo stile più autorevole.
 - Il chairman può dissentire dalla maggioranza. Non è un summarizer, è un sintetizzatore con giudizio indipendente.
 - Non attivare il council su decisioni triviali. Se l'intake rivela che non c'è un vero trade-off, segnala all'utente e chiedi se vuole comunque procedere.

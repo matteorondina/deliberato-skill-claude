@@ -28,11 +28,19 @@ In alternativa, scarica `SKILL.md` e incollalo in Claude chiedendo di installarl
 
 **2. Usa**
 
+**Full Council** — per decisioni critiche, irreversibili, ad alto impatto:
 ```
 "Delibera questa decisione: [descrizione]"
 "Convoca il council: devo decidere se [A] o [B]"
 "Passa al council: vale la pena [iniziativa]?"
-"Council questa decisione: [descrizione]"
+"Stresstest questa scelta: [descrizione]"
+```
+
+**Fast Council** — per decisioni importanti che non richiedono il processo completo:
+```
+"Check questa decisione: [descrizione]"
+"Parere rapido su: [descrizione]"
+"Analisi rapida: devo decidere se [A] o [B]"
 ```
 
 ---
@@ -41,11 +49,18 @@ In alternativa, scarica `SKILL.md` e incollalo in Claude chiedendo di installarl
 
 **Intake** — 5 domande strutturate per inquadrare la decisione, specifiche per modalità.
 
-**5 advisor in parallelo** — ognuno analizza dalla propria prospettiva (200-300 parole ciascuno, senza preamboli). Il parallelo è obbligatorio: previene il bias di chi parla per primo.
+Deliberato opera in due velocità:
 
-**Peer review anonima** — le risposte vengono randomizzate e anonimizzate (A/B/C/D/E). Ogni advisor revisiona le risposte degli altri senza sapere chi le ha scritte, rispondendo a 3 domande: risposta più forte, blind spot più grande, cosa mancano tutte e cinque.
+| | Full Council | Fast Council |
+|---|---|---|
+| Advisor | 5 in parallelo | 3 in parallelo |
+| Peer review | Sì, anonima | No |
+| Chiamate LLM | ~11 | ~4 |
+| Quando | Decisioni irreversibili, alto impatto | Decisioni importanti ma correggibili |
 
-**Chairman synthesis** — un agente sintetizza advisor e review in un verdetto strutturato con: punti di accordo, disaccordi genuini, blind spot emersi, raccomandazione, confidence qualificata, piano d'azione a 24h / 7gg / 30gg.
+**Full Council** — 5 advisor in parallelo analizzano dalla propria prospettiva (200-300 parole ciascuno). Peer review anonima randomizzata (A/B/C/D/E): ogni advisor revisiona gli altri senza sapere chi ha scritto cosa. Chairman synthesis con accordo, disaccordi, blind spot, raccomandazione, confidence, piano 24h / 7gg / 30gg.
+
+**Fast Council** — 3 advisor in parallelo, intake in 2 domande, chairman diretto senza peer review. Verdetto in ~4 chiamate LLM. Alla fine offre sempre il passaggio al Full Council.
 
 ---
 
@@ -82,10 +97,10 @@ Filosofia: una sola skill che cresce nel tempo, non una proliferazione di skill 
 |---|---|---|
 | Lingua e contesto | Inglese, esempi USA | Italiano, esempi PMI e founder italiane |
 | Modalità | Una sola, generalista | Multi-modalità (6 attive) |
-| Intake | Veloce, ~1 domanda | Strutturato, 5 domande mirate per modalità |
+| Intake | Veloce, ~1 domanda | Strutturato: 5 domande (Full) o 2 domande (Fast) |
 | Advisor | 5 fissi (thinking lenses) | 5 specializzati per modalità |
 | Guardrail | Non trattati | GDPR/AI Act, lock-in strategico, debito tecnico, unit economics, WTP |
-| Output | Verdetto + 1 next step | Stesso impianto + confidence qualificata + piano 24h/7gg/30gg |
+| Output | Verdetto + 1 next step | Full: confidence + piano 24h/7gg/30gg. Fast: confidence + 1 azione immediata |
 
 ---
 
