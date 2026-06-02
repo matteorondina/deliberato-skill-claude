@@ -2,7 +2,7 @@
 
 ## Descrizione
 
-Quando si usa questa modalità: decisioni su strategia marketing, scelte di stack e strumenti AI, build vs buy, prioritizzazione di iniziative AI, valutazione di MVP o feature, posizionamento per founder e PMI.
+Quando si usa questa modalità: decisioni su strategia marketing, scelte di stack e strumenti AI, build vs buy, prioritizzazione di iniziative AI, valutazione di MVP o feature, posizionamento per founder, manager e professionisti.
 
 Quando NON si usa: decisioni puramente legali (richiede consulenza legale vera), decisioni medico-sanitarie, scelte di vita personali non legate al business.
 

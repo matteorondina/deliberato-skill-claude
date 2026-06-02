@@ -2,8 +2,8 @@
 name: deliberato
 description: |
   Skill in italiano per decisioni strategiche complesse. Council di advisor AI
-  specializzati, peer review anonima, sintesi del chairman. Per founder e PMI
-  italiane. Due velocità: Full Council (5 advisor + peer review) e Fast Council
+  specializzati, peer review anonima, sintesi del chairman. Per founder, manager
+  e professionisti italiani. Due velocità: Full Council (5 advisor + peer review) e Fast Council
   (3 advisor, risposta rapida).
 
   TRIGGER FULL COUNCIL: "delibera questa decisione", "convoca il council",
@@ -30,7 +30,7 @@ description: |
 
 # Deliberato
 
-Deliberato convoca un council di advisor AI per analizzare decisioni strategiche complesse. Esiste in due velocità: **Full Council** (5 advisor, peer review anonima, chairman synthesis — per decisioni critiche) e **Fast Council** (3 advisor, chairman diretto, senza peer review — per decisioni importanti ma non irreversibili). Ogni advisor guarda la decisione da un angolo diverso. Pensato per founder e PMI italiane che affrontano decisioni strategiche senza un board di consulenti fisici.
+Deliberato convoca un council di advisor AI per analizzare decisioni strategiche complesse. Esiste in due velocità: **Full Council** (5 advisor, peer review anonima, chairman synthesis — per decisioni critiche) e **Fast Council** (3 advisor, chairman diretto, senza peer review — per decisioni importanti ma non irreversibili). Ogni advisor guarda la decisione da un angolo diverso. Pensato per founder, manager e professionisti italiani che affrontano decisioni strategiche di business senza un board di consulenti fisici.
 
 ## Quando si attiva
 
@@ -324,4 +324,4 @@ metodologia *LLM Council* di Andrej Karpathy
 (https://github.com/karpathy/llm-council).
 
 Deliberato è un progetto indipendente, scritto da zero in italiano, con advisor,
-intake e protocolli ridisegnati per founder e PMI italiane e per il contesto UE.
+intake e protocolli ridisegnati per founder, manager e professionisti italiani e per il contesto UE.

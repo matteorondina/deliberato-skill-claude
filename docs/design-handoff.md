@@ -2,7 +2,7 @@
 
 ## Prodotto
 
-Deliberato è una Claude Skill italiana che aiuta founder e PMI a prendere decisioni strategiche complesse. Convoca un council di advisor AI specializzati, ognuno con un angolo diverso. Esiste in due velocità: **Full Council** (5 advisor + peer review anonima + chairman) e **Fast Council** (3 advisor + chairman diretto).
+Deliberato è una Claude Skill italiana che aiuta founder, manager e professionisti a prendere decisioni strategiche complesse. Convoca un council di advisor AI specializzati, ognuno con un angolo diverso. Esiste in due velocità: **Full Council** (5 advisor + peer review anonima + chairman) e **Fast Council** (3 advisor + chairman diretto).
 
 Il contesto italiano è il differenziatore principale: guardrail su GDPR, AI Act, diritto del lavoro italiano, mercato VC italiano. Non è un tool generico in inglese.
 
@@ -10,7 +10,7 @@ Il contesto italiano è il differenziatore principale: guardrail su GDPR, AI Act
 
 ## Tono e identità visiva
 
-- **Pubblico**: founder e imprenditori italiani, 30–45 anni, abituati a tool professionali
+- **Pubblico**: founder, manager e professionisti italiani, 30–50 anni, abituati a tool professionali
 - **Tono**: serio, diretto, professionale. Non startup-y, non corporate. Pensa a uno studio legale moderno che usa tecnologia, non a una SaaS americana
 - **Lingua**: italiano in tutto il copy
 - **No a**: emoji, colori sgargianti, animazioni distraenti, tono "rivoluzionario"
@@ -72,7 +72,7 @@ Il contesto italiano è il differenziatore principale: guardrail su GDPR, AI Act
 - CTA: *"Prova il council →"* (link alla home)
 
 **2. Il problema**
-- 3–4 righe. I founder italiani prendono decisioni critiche senza un board reale. Le consulenze costano, gli amici non hanno il contesto, i tool AI generalisti non hanno guardrail per il contesto italiano.
+- 3–4 righe. Founder, manager e professionisti italiani prendono decisioni critiche spesso da soli o senza interlocutori con il contesto giusto. Le consulenze costano, i colleghi non hanno il tempo, i tool AI generalisti non hanno guardrail per il contesto italiano.
 
 **3. Come funziona**
 - Visualizzazione del processo in 4 step (icone o numerazione verticale/orizzontale):
@@ -109,7 +109,7 @@ Il contesto italiano è il differenziatore principale: guardrail su GDPR, AI Act
   - Guardrail GDPR e AI Act nei prompt degli advisor
   - Contesto giuslavoristico italiano (CCNL, periodo di prova, costi di uscita)
   - Ecosistema VC italiano (PNRR, Invitalia, CDP, bandi regionali)
-  - Esempi e casi d'uso calibrati su PMI e founder italiani, non su startup americane
+  - Esempi e casi d'uso calibrati sul contesto italiano, non su startup americane
 
 **7. CTA finale**
 - Headline: *"Porta la tua prossima decisione al council"*

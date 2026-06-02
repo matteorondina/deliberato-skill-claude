@@ -1,6 +1,6 @@
 # Deliberato
 
-*Il council decisionale in italiano per founder e PMI.*
+*Il council decisionale in italiano per founder, manager e professionisti.*
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Lingua: Italiano](https://img.shields.io/badge/Lingua-Italiano-blue.svg)](README.md)
@@ -10,7 +10,7 @@
 
 Deliberato è una Claude Skill che convoca un council di advisor AI specializzati per analizzare decisioni strategiche complesse. Esiste in due velocità: **Full Council** (5 advisor + peer review anonima) per decisioni critiche, **Fast Council** (3 advisor, chairman diretto) per decisioni importanti che non richiedono il processo completo. Un chairman sintetizza il verdetto con raccomandazione e piano d'azione.
 
-Pensato per founder e PMI italiane che affrontano decisioni strategiche senza un board di consulenti fisici.
+Pensato per founder, manager e professionisti italiani che affrontano decisioni strategiche di business senza un board di consulenti fisici.
 
 ---
 
