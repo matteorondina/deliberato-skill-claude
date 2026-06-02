@@ -8,7 +8,7 @@
 
 ---
 
-Deliberato è una Claude Skill che convoca un council di 5 advisor AI specializzati per analizzare decisioni strategiche complesse. Ogni advisor guarda la decisione da un angolo diverso, si rivedono a vicenda in anonimo, un chairman sintetizza il verdetto con raccomandazione e piano d'azione.
+Deliberato è una Claude Skill che convoca un council di advisor AI specializzati per analizzare decisioni strategiche complesse. Esiste in due velocità: **Full Council** (5 advisor + peer review anonima) per decisioni critiche, **Fast Council** (3 advisor, chairman diretto) per decisioni importanti che non richiedono il processo completo. Un chairman sintetizza il verdetto con raccomandazione e piano d'azione.
 
 Pensato per founder e PMI italiane che affrontano decisioni strategiche senza un board di consulenti fisici.
 
@@ -46,8 +46,6 @@ In alternativa, scarica `SKILL.md` e incollalo in Claude chiedendo di installarl
 ---
 
 ## Come funziona
-
-**Intake** — 5 domande strutturate per inquadrare la decisione, specifiche per modalità.
 
 Deliberato opera in due velocità:
 
@@ -87,7 +85,7 @@ Filosofia: una sola skill che cresce nel tempo, non una proliferazione di skill 
 
 ## Esempio di sessione
 
-[`examples/esempio-stack-ai-mvp.md`](examples/esempio-stack-ai-mvp.md) — una PMI di consulenza HR valuta se costruire internamente un agente AI per lo screening CV o acquistare un SaaS verticale. Caso realistico con GDPR, AI Act, vincoli di budget e team. Mostra l'intera sessione: intake, 4 risposte advisor, 4 peer review, verdetto finale.
+[`examples/esempio-stack-ai-mvp.md`](examples/esempio-stack-ai-mvp.md) — una PMI di consulenza HR valuta se costruire internamente un agente AI per lo screening CV o acquistare un SaaS verticale. Caso realistico con GDPR, AI Act, vincoli di budget e team. Mostra l'intera sessione Full Council: intake, 5 risposte advisor, 5 peer review, verdetto finale.
 
 ---
 
