@@ -77,15 +77,23 @@ Deliberato opera in due velocità:
 
 ## Roadmap
 
-Tutte le modalità pianificate sono rilasciate. Le prossime aggiunte verranno definite in base ai feedback d'uso.
+**Rilasciato:**
+- 6 modalità specializzate con 5 advisor ciascuna (Marketing & AI Strategy, Pricing, Hiring e Team, Direzione Strategica, Partnership e Distribuzione, Capitali e Finanza)
+- Fast Council — flusso rapido con 3 advisor e chairman diretto, senza peer review (~4 chiamate LLM)
+- Prospettiva espansore integrata in ogni modalità (5° advisor che sfida il framing della decisione)
+
+**In lavorazione:**
+- Sito web Deliberato — interfaccia pubblica per usare il council senza installare la skill
 
 Filosofia: una sola skill che cresce nel tempo, non una proliferazione di skill separate.
 
 ---
 
-## Esempio di sessione
+## Esempi di sessione
 
-[`examples/esempio-stack-ai-mvp.md`](examples/esempio-stack-ai-mvp.md) — una PMI di consulenza HR valuta se costruire internamente un agente AI per lo screening CV o acquistare un SaaS verticale. Caso realistico con GDPR, AI Act, vincoli di budget e team. Mostra l'intera sessione Full Council: intake, 5 risposte advisor, 5 peer review, verdetto finale.
+[`examples/esempio-stack-ai-mvp.md`](examples/esempio-stack-ai-mvp.md) — **Full Council.** Una PMI di consulenza HR valuta se costruire internamente un agente AI per lo screening CV o acquistare un SaaS verticale. Caso realistico con GDPR, AI Act, vincoli di budget e team. Intake completo, 5 advisor, 5 peer review, verdetto con piano d'azione.
+
+[`examples/esempio-pricing-fast-council.md`](examples/esempio-pricing-fast-council.md) — **Fast Council.** Un founder SaaS decide se alzare i prezzi del 61% prima o dopo il lancio di una nuova feature. Intake in 2 domande, 3 advisor in parallelo, verdetto diretto con raccomandazione e prossima azione in 24 ore.
 
 ---
 

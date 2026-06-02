@@ -1,38 +1,31 @@
 ---
 name: deliberato
 description: |
-  Skill in italiano che aiuta a prendere decisioni strategiche complesse facendole 
-  analizzare da 5 advisor AI con prospettive diverse, peer review anonima e 
-  sintesi finale del chairman. Pensata per founder e PMI italiane.
-  
-  TRIGGER FULL COUNCIL (attivano il flusso completo — 5 advisor + peer review): 
-  "delibera questa decisione", "convoca il council", "council questa decisione", 
-  "fai partire il council", "passa al council", "delibera questa scelta", 
-  "metti alla prova questa decisione", "stresstest questa scelta", 
-  "demolisci questa idea", "trova i buchi in questo piano".
-  
-  TRIGGER FAST COUNCIL (attivano il flusso rapido — 3 advisor, chairman diretto):
-  "check questa decisione", "parere rapido", "analisi rapida", "check rapido",
-  "quick council", "parere veloce", "sintesi rapida su questa decisione".
-  
-  TRIGGER CONTESTUALI (attivano Full Council solo se c'è una decisione reale con 
-  trade-off multipli e stakes significativi): "devo decidere se X o Y", "non so se 
-  conviene Z", "vale la pena W", "mi conviene", "che faccio tra A e B", "sono 
-  convinto di fare X ma voglio un contraddittorio", "ho già deciso, dimmi dove 
-  sbaglio".
-  
-  NON TRIGGERARE su: domande factual ("quanto costa X"), scelte triviali 
-  ("uso markdown o no"), richieste di scrittura ("scrivimi una mail"), 
-  domande di opinione senza decisione strutturata ("che ne pensi di Y"), 
-  task di esecuzione tecnica.
-  
-  Modalità attive: "Marketing & AI Strategy" (strategia marketing, stack AI, 
-  build vs buy, posizionamento), "Pricing" (modello di prezzo, freemium vs 
-  paid, aumento prezzi), "Hiring e Team" (primo dipendente, assunzione vs 
-  freelance, generalista vs specialista), "Direzione Strategica" (pivot, 
-  abbandono feature, nuovo segmento), "Partnership e Distribuzione" (canali, 
-  esclusiva, marketplace, white-label), "Capitali e Finanza" (fundraising, 
-  bootstrap vs round, valutazione offerte di investimento).
+  Skill in italiano per decisioni strategiche complesse. Council di advisor AI
+  specializzati, peer review anonima, sintesi del chairman. Per founder e PMI
+  italiane. Due velocità: Full Council (5 advisor + peer review) e Fast Council
+  (3 advisor, risposta rapida).
+
+  TRIGGER FULL COUNCIL: "delibera questa decisione", "convoca il council",
+  "council questa decisione", "fai partire il council", "passa al council",
+  "delibera questa scelta", "metti alla prova questa decisione",
+  "stresstest questa scelta", "demolisci questa idea",
+  "trova i buchi in questo piano".
+
+  TRIGGER FAST COUNCIL: "check questa decisione", "parere rapido",
+  "analisi rapida", "check rapido", "quick council", "parere veloce".
+
+  TRIGGER CONTESTUALI (Full Council, solo con decisione reale e trade-off
+  significativi): "devo decidere se X o Y", "non so se conviene Z",
+  "vale la pena W", "mi conviene", "che faccio tra A e B",
+  "sono convinto di fare X ma voglio un contraddittorio",
+  "ho già deciso, dimmi dove sbaglio".
+
+  NON TRIGGERARE su: domande factual, scelte triviali, richieste di scrittura,
+  opinioni senza decisione strutturata, task di esecuzione tecnica.
+
+  Modalità: Marketing & AI Strategy, Pricing, Hiring e Team, Direzione
+  Strategica, Partnership e Distribuzione, Capitali e Finanza.
 ---
 
 # Deliberato
