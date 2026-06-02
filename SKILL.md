@@ -22,7 +22,9 @@ description: |
   build vs buy, posizionamento), "Pricing" (modello di prezzo, freemium vs 
   paid, aumento prezzi), "Hiring e Team" (primo dipendente, assunzione vs 
   freelance, generalista vs specialista), "Direzione Strategica" (pivot, 
-  abbandono feature, nuovo segmento, cambio cliente target).
+  abbandono feature, nuovo segmento), "Partnership e Distribuzione" (canali, 
+  esclusiva, marketplace, white-label), "Capitali e Finanza" (fundraising, 
+  bootstrap vs round, valutazione offerte di investimento).
 ---
 
 # Deliberato
@@ -55,8 +57,8 @@ Deliberato convoca un council di 4 advisor AI per analizzare decisioni strategic
 | Pricing | `modes/pricing.md` | Modello di prezzo, freemium vs paid, aumento prezzi, cambio modello di ricavo |
 | Hiring e Team | `modes/hiring.md` | Primo dipendente, assunzione vs freelance, generalista vs specialista, in-house vs esternalizzare |
 | Direzione Strategica | `modes/direzione-strategica.md` | Pivot parziale o totale, abbandono feature o prodotto, nuovo segmento, cambio cliente target |
-
-*L'architettura è predisposta per ospitare altre modalità (partnership, capitali). Queste verranno aggiunte nelle release successive.*
+| Partnership e Distribuzione | `modes/partnership-distribuzione.md` | Esclusiva vs non esclusiva, canale diretto vs marketplace vs rivenditore, white-label, accordi di distribuzione |
+| Capitali e Finanza | `modes/capitali-finanza.md` | Bootstrap vs round, valutare un'offerta di investimento, scegliere tra investitori, timing del fundraising |
 
 ## Il flusso di una sessione
 
@@ -68,6 +70,8 @@ Quando la skill si attiva, l'orchestratore identifica la modalità appropriata i
 - Se la decisione riguarda prezzo, modello di ricavo, freemium, aumento prezzi → **Pricing**
 - Se la decisione riguarda assunzioni, composizione del team, freelance vs dipendente → **Hiring e Team**
 - Se la decisione riguarda cambiamento di direzione, pivot, abbandono di feature o prodotto, nuovo segmento → **Direzione Strategica**
+- Se la decisione riguarda partnership, canali di distribuzione, esclusiva, marketplace → **Partnership e Distribuzione**
+- Se la decisione riguarda raccolta di capitale, valutazione di un'offerta di investimento, bootstrap vs round → **Capitali e Finanza**
 
 Se il contesto non è chiaro, presenta le opzioni all'utente con una riga di descrizione ciascuna e chiedi quale si applica. Una volta identificata la modalità, comunica: *"Avvio Deliberato in modalità [nome modalità]."*
 

@@ -57,17 +57,14 @@ In alternativa, scarica `SKILL.md` e incollalo in Claude chiedendo di installarl
 | **Pricing** | Lo Stratega del Valore, L'Analista di Unit Economics, Il Comportamentalista, Il Realista di Mercato | Modello di prezzo, freemium vs paid, aumento prezzi, cambio modello di ricavo |
 | **Hiring e Team** | Lo Stratega del Team, Il Numerico, Il Costruttore di Cultura, Il Pragmatico Giuslavoristico | Primo dipendente, assunzione vs freelance, generalista vs specialista, in-house vs esternalizzare |
 | **Direzione Strategica** | L'Analista dei Segnali, Il Guardiano del Focus, Il Costruttore di Moat, Il Realista delle Persone | Pivot parziale o totale, abbandono feature o prodotto, nuovo segmento, cambio cliente target |
+| **Partnership e Distribuzione** | Lo Stratega del Canale, Il Negoziatore, Il Realista delle Dipendenze, L'Economista della Distribuzione | Esclusiva vs non esclusiva, canale diretto vs marketplace vs rivenditore, white-label, accordi di distribuzione |
+| **Capitali e Finanza** | Il Custode della Missione, Il Matematico del Capitale, Il Conoscitore di Investitori, Il Realista del Mercato Italiano | Bootstrap vs round, valutare un'offerta di investimento, scegliere tra investitori, timing del fundraising |
 
 ---
 
 ## Roadmap
 
-**In sviluppo (Fase 2)**
-
-| Cluster | Decisioni |
-|---|---|
-| Partnership e distribuzione | Esclusiva vs non esclusiva, canale diretto vs marketplace |
-| Capitali e finanza | Bootstrap vs round, valutare un'offerta di investimento |
+Tutte le modalità pianificate sono rilasciate. Le prossime aggiunte verranno definite in base ai feedback d'uso.
 
 Filosofia: una sola skill che cresce nel tempo, non una proliferazione di skill separate.
 
