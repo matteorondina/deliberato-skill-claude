@@ -35,12 +35,14 @@ Deliberato convoca un council di 4 advisor AI per analizzare decisioni strategic
 
 ### Buone domande per Deliberato
 
+Deliberato indirizza automaticamente la domanda alla modalità appropriata.
+
 - Scelgo tra costruire internamente uno strumento AI o comprare una soluzione SaaS?
 - Vale la pena lanciare questo canale di marketing adesso o aspetto di avere più traction?
-- Devo assumere un growth marketer in-house o lavorare con un'agenzia?
-- Costruisco l'MVP su questo stack o parto con qualcosa di più semplice?
-- Ha senso integrare AI in questo processo del mio servizio o è prematuro?
-- Continuo a investire su questo posizionamento o cambio rotta?
+- Assumo il primo dipendente adesso o continuo con i freelance per altri 6 mesi?
+- Alzo i prezzi del 30% o lancio un tier premium separato?
+- Ha senso fare pivot verso il segmento enterprise o resto sul mid-market?
+- Vale la pena accettare questo term sheet o aspetto condizioni migliori?
 
 ### Domande sbagliate per Deliberato
 
