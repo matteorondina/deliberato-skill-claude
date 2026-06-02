@@ -2,122 +2,106 @@
 
 *Il council decisionale in italiano per founder e PMI.*
 
-Quattro advisor AI analizzano la tua decisione da angoli diversi, si rivedono
-a vicenda in anonimo, producono un verdetto strutturato con raccomandazione
-e piano d'azione.
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Lingua: Italiano](https://img.shields.io/badge/Lingua-Italiano-blue.svg)](README.md)
+[![Claude Skill](https://img.shields.io/badge/Claude-Skill-orange.svg)](https://github.com/matteorondina/deliberato)
 
-## Che cos'è
+---
 
-Deliberato è una Claude Skill. Viene attivata all'interno di Claude (claude.ai o Claude Code) e guida l'utente attraverso un processo deliberativo strutturato. Non è un chatbot generico, non risponde a domande factual, non scrive testi. Serve a prendere decisioni strategiche complesse con trade-off reali, dove una risposta diretta non basta e il rischio di bias o punti ciechi è alto.
+Deliberato è una Claude Skill che convoca un council di 4 advisor AI specializzati per analizzare decisioni strategiche complesse. Ogni advisor guarda la decisione da un angolo diverso, si rivedono a vicenda in anonimo, un chairman sintetizza il verdetto con raccomandazione e piano d'azione.
 
-## A chi serve
+Pensato per founder e PMI italiane che affrontano decisioni strategiche senza un board di consulenti fisici.
 
-Founder di startup italiane, owner di PMI, consulenti e manager che affrontano decisioni strategiche su marketing e AI. Non richiede competenze tecniche per usarla. L'unico prerequisito è avere una decisione reale con opzioni e vincoli chiari da portare al council.
+---
 
-## Come funziona
+## Quick start
 
-1. Si attiva tramite frasi trigger (esempi sotto)
-2. Intake strutturato: 5 domande per inquadrare la decisione in modo completo
-3. 4 advisor analizzano in parallelo dalla loro prospettiva (200-300 parole ciascuno)
-4. Peer review anonima: ogni advisor revisiona le risposte degli altri senza sapere chi le ha scritte
-5. Chairman synthesis: un agente sintetizza advisor e review in un verdetto strutturato
-6. Il verdetto appare in chat in markdown, con raccomandazione e piano d'azione a 24h/7gg/30gg
+**1. Installa**
 
-## Modalità disponibili
-
-| Modalità | Stato | Per cosa |
-|---|---|---|
-| Marketing & AI Strategy | Attiva | Strategia marketing, stack AI, build vs buy, prioritizzazione iniziative, posizionamento |
-
-*Altre modalità sono in roadmap. Vedi la sezione Roadmap.*
-
-## Differenze rispetto a LLM Council
-
-| | LLM Council | Deliberato |
-|---|---|---|
-| Lingua e contesto | Inglese, esempi USA | Italiano, esempi PMI e founder italiane |
-| Modalità | Una sola, generalista | Multi-modalità (Fase 1: una attiva, altre in roadmap) |
-| Intake | Veloce, ~1 domanda di chiarimento | Strutturato, 5 domande mirate per modalità |
-| Advisor | 5 fissi (thinking lenses) | 4 specializzati per modalità |
-| Compliance UE | Non trattata | Guardrail GDPR/AI Act integrati |
-| Output | Verdetto + 1 next step | Stesso impianto + confidence qualificata + piano 24h/7gg/30gg |
-
-## Come si installa
-
-**Opzione 1 — Chiedi a Claude di installarla** (più semplice)
-
-Apri una conversazione con Claude e incolla questo messaggio:
+Apri Claude e incolla:
 
 ```
 Installa la skill da questo repository GitHub: https://github.com/matteorondina/deliberato
 ```
 
-**Opzione 2 — Scarica SKILL.md**
+In alternativa, scarica `SKILL.md` e incollalo in Claude chiedendo di installarlo come skill.
 
-Scarica il file `SKILL.md` da questo repository e incollalo in una conversazione con Claude chiedendo di installarlo come skill.
+**2. Usa**
 
-## Come si usa
+```
+"Delibera questa decisione: [descrizione]"
+"Convoca il council: devo decidere se [A] o [B]"
+"Passa al council: vale la pena [iniziativa]?"
+"Council questa decisione: [descrizione]"
+```
 
-Dopo l'installazione, frasi che attivano Deliberato:
+---
 
-- `"Delibera questa decisione: [descrizione]"`
-- `"Convoca il council: devo decidere se [opzione A] o [opzione B]"`
-- `"Passa al council: vale la pena [iniziativa]?"`
-- `"Council questa decisione: [descrizione]"`
+## Come funziona
 
-## Esempio di sessione
+**Intake** — 5 domande strutturate per inquadrare la decisione, specifiche per modalità.
 
-`examples/esempio-stack-ai-mvp.md` — una PMI di consulenza HR valuta se costruire internamente un agente AI per lo screening CV o acquistare un SaaS verticale. Caso realistico con GDPR, AI Act, vincoli di budget e team. Mostra l'intera sessione: intake, 4 risposte advisor, 4 peer review, verdetto finale.
+**4 advisor in parallelo** — ognuno analizza dalla propria prospettiva (200-300 parole ciascuno, senza preamboli). Il parallelo è obbligatorio: previene il bias di chi parla per primo.
+
+**Peer review anonima** — le risposte vengono randomizzate e anonimizzate (A/B/C/D). Ogni advisor revisiona le risposte degli altri senza sapere chi le ha scritte, rispondendo a 3 domande: risposta più forte, blind spot più grande, cosa mancano tutte e quattro.
+
+**Chairman synthesis** — un agente sintetizza advisor e review in un verdetto strutturato con: punti di accordo, disaccordi genuini, blind spot emersi, raccomandazione, confidence qualificata, piano d'azione a 24h / 7gg / 30gg.
+
+---
+
+## Modalità disponibili
+
+| Modalità | Advisor | Per cosa |
+|---|---|---|
+| **Marketing & AI Strategy** | Lo Stratega di Prodotto, L'Economista Pragmatico, Il Realista Operativo, Il Contrarian AI-aware | Strategia marketing, stack AI, build vs buy, prioritizzazione iniziative, posizionamento |
+| **Pricing** | Lo Stratega del Valore, L'Analista di Unit Economics, Il Comportamentalista, Il Realista di Mercato | Modello di prezzo, freemium vs paid, aumento prezzi, cambio modello di ricavo |
+
+---
 
 ## Roadmap
 
-**Fase 1 (attuale)** — modalità Marketing & AI Strategy
+**In sviluppo (Fase 2)**
 
-**Fase 2** — nuove modalità, in ordine di priorità da definire con i feedback:
-
-*Hiring e team*
-- Primo dipendente: assunzione vs continuare con freelance
-- Generalista vs specialista alla prima assunzione
-- Quando assumere in-house vs esternalizzare una funzione
-
-*Pricing e modello di ricavo*
-- Freemium vs paid from day 1
-- Cambio modello (subscription vs one-time vs usage-based)
-- Aumento prezzi su base clienti esistente
-
-*Direzione strategica*
-- Quando abbandonare una feature o un prodotto
-- Pivot parziale vs totale: quando e come
-- Entrare in un nuovo segmento: espansione vs focus
-
-*Partnership e distribuzione*
-- Partnership esclusiva vs non esclusiva
-- Canale diretto vs marketplace vs rivenditore
-- White-label vs branded
-
-*Capitali e finanza*
-- Bootstrap vs round di investimento: quando alzare il capitale
-- Valutare un'offerta di investimento con condizioni specifiche
-- Timing del fundraising rispetto alle metriche attuali
-
-**Fase 3** — modalità in base ai feedback (negoziazione professionale, altre da definire)
+| Cluster | Decisioni |
+|---|---|
+| Hiring e team | Primo dipendente, generalista vs specialista, in-house vs esternalizzare |
+| Direzione strategica | Quando abbandonare una feature, pivot parziale vs totale, nuovo segmento |
+| Partnership e distribuzione | Esclusiva vs non esclusiva, canale diretto vs marketplace |
+| Capitali e finanza | Bootstrap vs round, valutare un'offerta di investimento |
 
 Filosofia: una sola skill che cresce nel tempo, non una proliferazione di skill separate.
+
+---
+
+## Esempio di sessione
+
+[`examples/esempio-stack-ai-mvp.md`](examples/esempio-stack-ai-mvp.md) — una PMI di consulenza HR valuta se costruire internamente un agente AI per lo screening CV o acquistare un SaaS verticale. Caso realistico con GDPR, AI Act, vincoli di budget e team. Mostra l'intera sessione: intake, 4 risposte advisor, 4 peer review, verdetto finale.
+
+---
+
+## Confronto con LLM Council
+
+| | LLM Council | Deliberato |
+|---|---|---|
+| Lingua e contesto | Inglese, esempi USA | Italiano, esempi PMI e founder italiane |
+| Modalità | Una sola, generalista | Multi-modalità (2 attive, altre in roadmap) |
+| Intake | Veloce, ~1 domanda | Strutturato, 5 domande mirate per modalità |
+| Advisor | 5 fissi (thinking lenses) | 4 specializzati per modalità |
+| Guardrail | Non trattati | GDPR/AI Act, lock-in strategico, debito tecnico, unit economics, WTP |
+| Output | Verdetto + 1 next step | Stesso impianto + confidence qualificata + piano 24h/7gg/30gg |
+
+---
 
 ## Crediti e ispirazione
 
 Deliberato si ispira al pattern *LLM Council* di [Ole Lehmann](https://github.com/aiwithremy/claude-skills-llm-council), basato sulla metodologia *LLM Council* di [Andrej Karpathy](https://github.com/karpathy/llm-council). Riconosco l'intuizione originale e ringrazio gli autori per il contributo all'ecosistema delle Claude Skills.
 
-Deliberato è un progetto indipendente, scritto da zero in italiano, con advisor specializzati, intake strutturato e guardrail compliance per il contesto UE. Pensato per founder e PMI italiane.
+Deliberato è un progetto indipendente, scritto da zero in italiano, con advisor specializzati, intake strutturato e guardrail compliance per il contesto UE.
 
 ## Disclaimer
 
 Deliberato è uno strumento di supporto alla decisione. Non sostituisce consulenza legale, finanziaria, fiscale o medica specialistica. Per aspetti di compliance (GDPR, AI Act) consultare professionisti qualificati. La decisione finale resta dell'utente.
 
-## Licenza
+## Licenza e autore
 
-MIT — vedi `LICENSE`.
-
-## Autore
-
-Matteo Rondina — [LinkedIn](https://www.linkedin.com/in/matteorondina/)
+MIT — [Matteo Rondina](https://www.linkedin.com/in/matteorondina/)

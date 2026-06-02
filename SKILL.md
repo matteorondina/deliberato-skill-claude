@@ -18,14 +18,15 @@ description: |
   domande di opinione senza decisione strutturata ("che ne pensi di Y"), 
   task di esecuzione tecnica.
   
-  Attualmente attiva una sola modalità: "Marketing & AI Strategy" (decisioni 
-  su strategia marketing, scelte di stack/strumenti AI, build vs buy, 
-  prioritizzazione iniziative AI, posizionamento per founder/PMI).
+  Modalità attive: "Marketing & AI Strategy" (decisioni su strategia 
+  marketing, stack AI, build vs buy, prioritizzazione iniziative, 
+  posizionamento) e "Pricing" (modello di prezzo, freemium vs paid, 
+  aumento prezzi, cambio modello di ricavo).
 ---
 
 # Deliberato
 
-Deliberato convoca un council di 4 advisor AI per analizzare decisioni strategiche complesse. Ogni advisor guarda la decisione da un angolo diverso, si rivedono a vicenda in anonimo, un chairman sintetizza il verdetto. Pensato per founder e PMI italiane che devono prendere decisioni su marketing e AI senza un board di consulenti fisici.
+Deliberato convoca un council di 4 advisor AI per analizzare decisioni strategiche complesse. Ogni advisor guarda la decisione da un angolo diverso, si rivedono a vicenda in anonimo, un chairman sintetizza il verdetto. Pensato per founder e PMI italiane che affrontano decisioni strategiche senza un board di consulenti fisici.
 
 ## Quando si attiva
 
@@ -47,17 +48,23 @@ Deliberato convoca un council di 4 advisor AI per analizzare decisioni strategic
 
 ## Modalità disponibili
 
-| Modalità | Stato | Quando usarla |
+| Modalità | File | Quando usarla |
 |---|---|---|
-| Marketing & AI Strategy | Attiva (Fase 1) | Decisioni su strategia marketing, stack AI, build vs buy, prioritizzazione iniziative, posizionamento |
+| Marketing & AI Strategy | `modes/marketing-ai-strategy.md` | Strategia marketing, stack AI, build vs buy, prioritizzazione iniziative, posizionamento |
+| Pricing | `modes/pricing.md` | Modello di prezzo, freemium vs paid, aumento prezzi, cambio modello di ricavo |
 
-*L'architettura è predisposta per ospitare altre modalità (decisioni founder generaliste, negoziazione, ecc.). Queste verranno aggiunte nelle release successive.*
+*L'architettura è predisposta per ospitare altre modalità (hiring, pivot, partnership, capitali). Queste verranno aggiunte nelle release successive.*
 
 ## Il flusso di una sessione
 
 ### Step 1 — Identificazione modalità
 
-In Fase 1 c'è una sola modalità attiva. Quando la skill si attiva, l'orchestratore comunica chiaramente: *"Avvio Deliberato in modalità Marketing & AI Strategy (unica modalità attiva nella versione corrente)."*
+Quando la skill si attiva, l'orchestratore identifica la modalità appropriata in base alla natura della decisione:
+
+- Se la decisione riguarda strategia marketing, stack tecnologico, build vs buy, posizionamento → **Marketing & AI Strategy**
+- Se la decisione riguarda prezzo, modello di ricavo, freemium, aumento prezzi → **Pricing**
+
+Se il contesto non è chiaro, presenta le opzioni all'utente con una riga di descrizione ciascuna e chiedi quale si applica. Una volta identificata la modalità, comunica: *"Avvio Deliberato in modalità [nome modalità]."*
 
 ### Step 2 — Intake strutturato
 
@@ -65,7 +72,7 @@ Carica e applica le 5 domande di intake dal file `modes/marketing-ai-strategy.md
 
 ### Step 3 — Convocazione advisor (4 in parallelo)
 
-Spawna 4 sub-agenti in parallelo, uno per advisor, ognuno con il proprio prompt template (definito in `modes/marketing-ai-strategy.md`). Ogni advisor produce una risposta di 200-300 parole, in italiano, senza preamboli. Il parallelo è obbligatorio: previene il bias di posizione (chi risponde per primo influenza gli altri).
+Spawna 4 sub-agenti in parallelo, uno per advisor, ognuno con il proprio prompt template (definito nel file della modalità attiva). Ogni advisor produce una risposta di 200-300 parole, in italiano, senza preamboli. Il parallelo è obbligatorio: previene il bias di posizione (chi risponde per primo influenza gli altri).
 
 Prompt template generale per gli advisor:
 
@@ -136,10 +143,12 @@ La decisione portata al council:
 
 RISPOSTE DEGLI ADVISOR:
 
-**Lo Stratega di Prodotto:** {risposta}
-**L'Economista Pragmatico:** {risposta}
-**Il Realista Operativo:** {risposta}
-**Il Contrarian AI-aware:** {risposta}
+**{advisor_1_nome}:** {risposta_1}
+**{advisor_2_nome}:** {risposta_2}
+**{advisor_3_nome}:** {risposta_3}
+**{advisor_4_nome}:** {risposta_4}
+
+*(i nomi degli advisor sono quelli definiti nella modalità attiva)*
 
 PEER REVIEW:
 {tutte_le_4_review}
@@ -189,7 +198,7 @@ Il verdetto viene presentato direttamente in chat in markdown, senza generare fi
 - Anonimizza sempre le risposte nella peer review. Se i reviewer sanno chi ha scritto cosa, tendono a deferire allo stile più autorevole.
 - Il chairman può dissentire dalla maggioranza. Non è un summarizer, è un sintetizzatore con giudizio indipendente.
 - Non attivare il council su decisioni triviali. Se l'intake rivela che non c'è un vero trade-off, segnala all'utente e chiedi se vuole comunque procedere.
-- Compliance: se la decisione tocca dati personali o sistemi AI ad alto impatto, il Contrarian deve sollevare esplicitamente GDPR/AI Act nella propria risposta.
+- I guardrail specifici per modalità (compliance GDPR/AI Act, lock-in strategico, debito tecnico, unit economics, willingness to pay) sono definiti nei rispettivi file modalità e inclusi nei prompt template dei singoli advisor.
 
 ## Crediti e ispirazione
 
