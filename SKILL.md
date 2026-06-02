@@ -2,16 +2,19 @@
 name: deliberato
 description: |
   Skill in italiano che aiuta a prendere decisioni strategiche complesse facendole 
-  analizzare da 4 advisor AI con prospettive diverse, peer review anonima e 
+  analizzare da 5 advisor AI con prospettive diverse, peer review anonima e 
   sintesi finale del chairman. Pensata per founder e PMI italiane.
   
   TRIGGER PRINCIPALI (sempre attivano): "delibera questa decisione", 
   "convoca il council", "council questa decisione", "fai partire il council", 
-  "passa al council", "delibera questa scelta".
+  "passa al council", "delibera questa scelta", "metti alla prova questa 
+  decisione", "stresstest questa scelta", "demolisci questa idea", 
+  "trova i buchi in questo piano".
   
   TRIGGER CONTESTUALI (attivano solo se c'è una decisione reale con trade-off 
   multipli e stakes significativi): "devo decidere se X o Y", "non so se conviene 
-  Z", "vale la pena W", "mi conviene", "che faccio tra A e B".
+  Z", "vale la pena W", "mi conviene", "che faccio tra A e B", "sono convinto 
+  di fare X ma voglio un contraddittorio", "ho già deciso, dimmi dove sbaglio".
   
   NON TRIGGERARE su: domande factual ("quanto costa X"), scelte triviali 
   ("uso markdown o no"), richieste di scrittura ("scrivimi una mail"), 
@@ -81,11 +84,11 @@ Se il contesto non è chiaro, presenta le opzioni all'utente con una riga di des
 
 Carica e applica le 5 domande di intake dal file della modalità attiva (percorso indicato nella tabella di questo file, sezione "Modalità disponibili"). Le domande vengono poste in modo conversazionale, una alla volta o raggruppate se l'utente ha già fornito contesto ricco nel primo messaggio. Se l'utente è già stato esauriente su alcuni punti, l'orchestratore può saltare le domande già coperte, segnalando quali omette e perché.
 
-### Step 3 — Convocazione advisor (4 in parallelo)
+### Step 3 — Convocazione advisor (5 in parallelo)
 
-Spawna 4 sub-agenti in parallelo, uno per advisor, ognuno con il proprio prompt template (definito nel file della modalità attiva). Ogni advisor produce una risposta di 200-300 parole, in italiano, senza preamboli. Il parallelo è obbligatorio: previene il bias di posizione (chi risponde per primo influenza gli altri).
+Spawna 5 sub-agenti in parallelo, uno per advisor, ognuno con il proprio prompt template (definito nel file della modalità attiva). Ogni advisor produce una risposta di 200-300 parole, in italiano, senza preamboli. Il parallelo è obbligatorio: previene il bias di posizione (chi risponde per primo influenza gli altri).
 
-Usa i prompt template completi definiti nel file della modalità attiva (sezione "I 4 advisor", sotto-sezione "Prompt template" per ciascun advisor). Ogni template include lo stile di pensiero specifico e i guardrail obbligatori dell'advisor — non usare prompt generici che li ometterebbero.
+Usa i prompt template completi definiti nel file della modalità attiva (sezione "I 5 advisor", sotto-sezione "Prompt template" per ciascun advisor). Ogni template include lo stile di pensiero specifico e i guardrail obbligatori dell'advisor — non usare prompt generici che li ometterebbero.
 
 Struttura di riferimento dei prompt (ogni modalità la implementa con contenuto specifico):
 
@@ -107,12 +110,12 @@ Lunghezza: 200-300 parole. Nessun preambolo, vai dritto all'analisi.
 
 ### Step 4 — Peer review anonima
 
-Raccogli le 4 risposte degli advisor. Anonimizzale come Risposta A, B, C, D, **randomizzando l'ordine** (così non c'è bias posizionale). Spawna 4 nuovi sub-agenti reviewer in parallelo (uno per advisor): ogni reviewer vede tutte e 4 le risposte anonimizzate e risponde a 3 domande.
+Raccogli le 5 risposte degli advisor. Anonimizzale come Risposta A, B, C, D, E, **randomizzando l'ordine** (così non c'è bias posizionale). Spawna 5 nuovi sub-agenti reviewer in parallelo (uno per advisor): ogni reviewer vede tutte e 5 le risposte anonimizzate e risponde a 3 domande.
 
 Prompt template reviewer:
 
 ```
-Stai revisionando il lavoro di un council deliberativo. Quattro advisor 
+Stai revisionando il lavoro di un council deliberativo. Cinque advisor 
 hanno risposto indipendentemente a questa domanda:
 
 ---
@@ -125,12 +128,13 @@ Ecco le risposte anonimizzate:
 **Risposta B:** {risposta_b}
 **Risposta C:** {risposta_c}
 **Risposta D:** {risposta_d}
+**Risposta E:** {risposta_e}
 
 Rispondi a queste tre domande. Sii specifico. Cita le risposte per lettera.
 
 1. Quale risposta è la più forte? Perché?
 2. Quale risposta ha il blind spot più grande? Cosa manca?
-3. Cosa hanno mancato TUTTE e quattro le risposte e che il council dovrebbe 
+3. Cosa hanno mancato TUTTE e cinque le risposte e che il council dovrebbe 
    considerare?
 
 Lunghezza max 200 parole. Sii diretto.
@@ -138,7 +142,7 @@ Lunghezza max 200 parole. Sii diretto.
 
 ### Step 5 — Chairman synthesis
 
-Un singolo agente chairman riceve: il brief, le 4 risposte de-anonimizzate (chi ha detto cosa), le 4 peer review. Produce il verdetto finale nella struttura fissa.
+Un singolo agente chairman riceve: il brief, le 5 risposte de-anonimizzate (chi ha detto cosa), le 5 peer review. Produce il verdetto finale nella struttura fissa.
 
 Prima di costruire il prompt, controlla se il file della modalità attiva contiene una sezione `## Istruzioni per il chairman`. Se presente, appendi quelle istruzioni al prompt del chairman, dopo la struttura del verdetto e prima dell'istruzione finale "Sii diretto."
 
@@ -148,7 +152,7 @@ Prompt template chairman:
 
 ```
 Sei il Chairman di un council deliberativo. Devi sintetizzare il lavoro 
-di 4 advisor e delle relative peer review in un verdetto finale.
+di 5 advisor e delle relative peer review in un verdetto finale.
 
 La decisione portata al council:
 
@@ -162,9 +166,10 @@ RISPOSTE DEGLI ADVISOR:
 **{advisor_2_nome}:** {risposta_2}
 **{advisor_3_nome}:** {risposta_3}
 **{advisor_4_nome}:** {risposta_4}
+**{advisor_5_nome}:** {risposta_5}
 
 PEER REVIEW:
-{tutte_le_4_review}
+{tutte_le_5_review}
 
 Produci il verdetto del council usando ESATTAMENTE questa struttura:
 
@@ -207,7 +212,7 @@ Il verdetto viene presentato direttamente in chat in markdown, senza generare fi
 
 ## Note importanti
 
-- Sempre 4 advisor in parallelo, mai sequenziali. La parallelizzazione previene il bias di chi parla per primo.
+- Sempre 5 advisor in parallelo, mai sequenziali. La parallelizzazione previene il bias di chi parla per primo.
 - Anonimizza sempre le risposte nella peer review. Se i reviewer sanno chi ha scritto cosa, tendono a deferire allo stile più autorevole.
 - Il chairman può dissentire dalla maggioranza. Non è un summarizer, è un sintetizzatore con giudizio indipendente.
 - Non attivare il council su decisioni triviali. Se l'intake rivela che non c'è un vero trade-off, segnala all'utente e chiedi se vuole comunque procedere.

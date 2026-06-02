@@ -8,7 +8,7 @@
 
 ---
 
-Deliberato è una Claude Skill che convoca un council di 4 advisor AI specializzati per analizzare decisioni strategiche complesse. Ogni advisor guarda la decisione da un angolo diverso, si rivedono a vicenda in anonimo, un chairman sintetizza il verdetto con raccomandazione e piano d'azione.
+Deliberato è una Claude Skill che convoca un council di 5 advisor AI specializzati per analizzare decisioni strategiche complesse. Ogni advisor guarda la decisione da un angolo diverso, si rivedono a vicenda in anonimo, un chairman sintetizza il verdetto con raccomandazione e piano d'azione.
 
 Pensato per founder e PMI italiane che affrontano decisioni strategiche senza un board di consulenti fisici.
 
@@ -41,9 +41,9 @@ In alternativa, scarica `SKILL.md` e incollalo in Claude chiedendo di installarl
 
 **Intake** — 5 domande strutturate per inquadrare la decisione, specifiche per modalità.
 
-**4 advisor in parallelo** — ognuno analizza dalla propria prospettiva (200-300 parole ciascuno, senza preamboli). Il parallelo è obbligatorio: previene il bias di chi parla per primo.
+**5 advisor in parallelo** — ognuno analizza dalla propria prospettiva (200-300 parole ciascuno, senza preamboli). Il parallelo è obbligatorio: previene il bias di chi parla per primo.
 
-**Peer review anonima** — le risposte vengono randomizzate e anonimizzate (A/B/C/D). Ogni advisor revisiona le risposte degli altri senza sapere chi le ha scritte, rispondendo a 3 domande: risposta più forte, blind spot più grande, cosa mancano tutte e quattro.
+**Peer review anonima** — le risposte vengono randomizzate e anonimizzate (A/B/C/D/E). Ogni advisor revisiona le risposte degli altri senza sapere chi le ha scritte, rispondendo a 3 domande: risposta più forte, blind spot più grande, cosa mancano tutte e cinque.
 
 **Chairman synthesis** — un agente sintetizza advisor e review in un verdetto strutturato con: punti di accordo, disaccordi genuini, blind spot emersi, raccomandazione, confidence qualificata, piano d'azione a 24h / 7gg / 30gg.
 
@@ -53,12 +53,12 @@ In alternativa, scarica `SKILL.md` e incollalo in Claude chiedendo di installarl
 
 | Modalità | Advisor | Per cosa |
 |---|---|---|
-| **Marketing & AI Strategy** | Lo Stratega di Prodotto, L'Economista Pragmatico, Il Realista Operativo, Il Contrarian AI-aware | Strategia marketing, stack AI, build vs buy, prioritizzazione iniziative, posizionamento |
-| **Pricing** | Lo Stratega del Valore, L'Analista di Unit Economics, Il Comportamentalista, Il Realista di Mercato | Modello di prezzo, freemium vs paid, aumento prezzi, cambio modello di ricavo |
-| **Hiring e Team** | Lo Stratega del Team, Il Numerico, Il Costruttore di Cultura, Il Pragmatico Giuslavoristico | Primo dipendente, assunzione vs freelance, generalista vs specialista, in-house vs esternalizzare |
-| **Direzione Strategica** | L'Analista dei Segnali, Il Guardiano del Focus, Il Costruttore di Moat, Il Realista delle Persone | Pivot parziale o totale, abbandono feature o prodotto, nuovo segmento, cambio cliente target |
-| **Partnership e Distribuzione** | Lo Stratega del Canale, Il Negoziatore, Il Realista delle Dipendenze, L'Economista della Distribuzione | Esclusiva vs non esclusiva, canale diretto vs marketplace vs rivenditore, white-label, accordi di distribuzione |
-| **Capitali e Finanza** | Il Custode della Missione, Il Matematico del Capitale, Il Conoscitore di Investitori, Il Realista del Mercato Italiano | Bootstrap vs round, valutare un'offerta di investimento, scegliere tra investitori, timing del fundraising |
+| **Marketing & AI Strategy** | Lo Stratega di Prodotto, L'Economista Pragmatico, Il Realista Operativo, Il Contrarian AI-aware, L'Espansore | Strategia marketing, stack AI, build vs buy, prioritizzazione iniziative, posizionamento |
+| **Pricing** | Lo Stratega del Valore, L'Analista di Unit Economics, Il Comportamentalista, Il Realista di Mercato, Il Provocatore | Modello di prezzo, freemium vs paid, aumento prezzi, cambio modello di ricavo |
+| **Hiring e Team** | Lo Stratega del Team, Il Numerico, Il Costruttore di Cultura, Il Pragmatico Giuslavoristico, Il Questionatore | Primo dipendente, assunzione vs freelance, generalista vs specialista, in-house vs esternalizzare |
+| **Direzione Strategica** | L'Analista dei Segnali, Il Guardiano del Focus, Il Costruttore di Moat, Il Realista delle Persone, L'Amplificatore | Pivot parziale o totale, abbandono feature o prodotto, nuovo segmento, cambio cliente target |
+| **Partnership e Distribuzione** | Lo Stratega del Canale, Il Negoziatore, Il Realista delle Dipendenze, L'Economista della Distribuzione, Il Laterale | Esclusiva vs non esclusiva, canale diretto vs marketplace vs rivenditore, white-label, accordi di distribuzione |
+| **Capitali e Finanza** | Il Custode della Missione, Il Matematico del Capitale, Il Conoscitore di Investitori, Il Realista del Mercato Italiano, Il Visionario | Bootstrap vs round, valutare un'offerta di investimento, scegliere tra investitori, timing del fundraising |
 
 ---
 
@@ -83,7 +83,7 @@ Filosofia: una sola skill che cresce nel tempo, non una proliferazione di skill 
 | Lingua e contesto | Inglese, esempi USA | Italiano, esempi PMI e founder italiane |
 | Modalità | Una sola, generalista | Multi-modalità (6 attive) |
 | Intake | Veloce, ~1 domanda | Strutturato, 5 domande mirate per modalità |
-| Advisor | 5 fissi (thinking lenses) | 4 specializzati per modalità |
+| Advisor | 5 fissi (thinking lenses) | 5 specializzati per modalità |
 | Guardrail | Non trattati | GDPR/AI Act, lock-in strategico, debito tecnico, unit economics, WTP |
 | Output | Verdetto + 1 next step | Stesso impianto + confidence qualificata + piano 24h/7gg/30gg |
 
