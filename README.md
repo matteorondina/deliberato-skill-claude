@@ -56,6 +56,7 @@ In alternativa, scarica `SKILL.md` e incollalo in Claude chiedendo di installarl
 | **Marketing & AI Strategy** | Lo Stratega di Prodotto, L'Economista Pragmatico, Il Realista Operativo, Il Contrarian AI-aware | Strategia marketing, stack AI, build vs buy, prioritizzazione iniziative, posizionamento |
 | **Pricing** | Lo Stratega del Valore, L'Analista di Unit Economics, Il Comportamentalista, Il Realista di Mercato | Modello di prezzo, freemium vs paid, aumento prezzi, cambio modello di ricavo |
 | **Hiring e Team** | Lo Stratega del Team, Il Numerico, Il Costruttore di Cultura, Il Pragmatico Giuslavoristico | Primo dipendente, assunzione vs freelance, generalista vs specialista, in-house vs esternalizzare |
+| **Direzione Strategica** | L'Analista dei Segnali, Il Guardiano del Focus, Il Costruttore di Moat, Il Realista delle Persone | Pivot parziale o totale, abbandono feature o prodotto, nuovo segmento, cambio cliente target |
 
 ---
 
@@ -65,7 +66,6 @@ In alternativa, scarica `SKILL.md` e incollalo in Claude chiedendo di installarl
 
 | Cluster | Decisioni |
 |---|---|
-| Direzione strategica | Quando abbandonare una feature, pivot parziale vs totale, nuovo segmento |
 | Partnership e distribuzione | Esclusiva vs non esclusiva, canale diretto vs marketplace |
 | Capitali e finanza | Bootstrap vs round, valutare un'offerta di investimento |
 
