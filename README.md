@@ -81,7 +81,7 @@ Filosofia: una sola skill che cresce nel tempo, non una proliferazione di skill 
 | | LLM Council | Deliberato |
 |---|---|---|
 | Lingua e contesto | Inglese, esempi USA | Italiano, esempi PMI e founder italiane |
-| Modalità | Una sola, generalista | Multi-modalità (2 attive, altre in roadmap) |
+| Modalità | Una sola, generalista | Multi-modalità (6 attive) |
 | Intake | Veloce, ~1 domanda | Strutturato, 5 domande mirate per modalità |
 | Advisor | 5 fissi (thinking lenses) | 4 specializzati per modalità |
 | Guardrail | Non trattati | GDPR/AI Act, lock-in strategico, debito tecnico, unit economics, WTP |

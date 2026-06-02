@@ -32,7 +32,7 @@ R: Se costruisco e non funziona, ho speso 8K€ e 3 mesi per niente, e devo rico
 
 ### Come le vede il reviewer: risposte anonimizzate (A/B/C/D)
 
-Per la peer review, le risposte vengono presentate in ordine randomizzato e anonimizzato. In questo esempio l'ordine è: A = Il Contrarian AI-aware, B = L'Economista Pragmatico, C = Lo Stratega di Prodotto, D = Il Realista Operativo.
+Per la peer review, le risposte vengono presentate in ordine randomizzato e anonimizzato. Il mapping tra lettere e advisor viene rivelato solo nella fase di sintesi del chairman (sezione successiva).
 
 ---
 

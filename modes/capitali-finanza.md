@@ -160,6 +160,15 @@ la cessione di equity, segnalalo esplicitamente. Non è opzionale.
 Lunghezza: 200-300 parole. Nessun preambolo, vai dritto all'analisi.
 ```
 
+## Istruzioni per il chairman
+
+Questa modalità ha implicazioni legali e fiscali che vanno oltre il disclaimer generico. Alla fine del verdetto, dopo il piano d'azione, sostituisci il disclaimer standard con questo:
+
+---
+*Questo verdetto non sostituisce consulenza legale, finanziaria o fiscale specialistica. Le decisioni su raccolta di capitale, valutazione di term sheet, struttura societaria e implicazioni fiscali di round di investimento richiedono un legale specializzato in startup e un commercialista con esperienza in operazioni di equity. Non procedere alla firma di nessun documento sulla base di questo verdetto senza consulenza professionale dedicata.*
+
+---
+
 ## Note sulla modalità
 
 - Guardrail diluizione (Il Matematico del Capitale): deve calcolare la diluizione effettiva post-round e almeno un exit scenario con la liquidation preference. Se i dati mancano, stima con ipotesi esplicite — non lasciare i numeri vaghi.

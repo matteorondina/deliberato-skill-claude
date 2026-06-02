@@ -119,7 +119,10 @@ advisor copriranno gli angoli che tu non copri.
 
 Se la partnership porta la concentrazione su un singolo canale/partner a 
 oltre il 50% del revenue atteso, segnalalo come rischio di concentrazione 
-critico. Se vengono ceduti dati o accessi non recuperabili, segnalalo.
+critico. Se vengono ceduti dati clienti o accessi non recuperabili, 
+segnalalo esplicitamente — incluse le implicazioni GDPR in contesti B2C 
+(base legale per il trasferimento, informativa agli utenti, responsabilità 
+del trattamento). Non è opzionale.
 
 Lunghezza: 200-300 parole. Nessun preambolo, vai dritto all'analisi.
 ```

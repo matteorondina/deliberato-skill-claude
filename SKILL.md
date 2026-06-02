@@ -69,7 +69,7 @@ Quando la skill si attiva, l'orchestratore identifica la modalità appropriata i
 - Se la decisione riguarda strategia marketing, stack tecnologico, build vs buy, posizionamento → **Marketing & AI Strategy**
 - Se la decisione riguarda prezzo, modello di ricavo, freemium, aumento prezzi → **Pricing**
 - Se la decisione riguarda assunzioni, composizione del team, freelance vs dipendente → **Hiring e Team**
-- Se la decisione riguarda cambiamento di direzione, pivot, abbandono di feature o prodotto, nuovo segmento → **Direzione Strategica**
+- Se la decisione riguarda cambiamento di direzione, pivot, abbandono di feature o prodotto, nuovo segmento, cambio modello di business, ridefinizione del cliente target → **Direzione Strategica**
 - Se la decisione riguarda partnership, canali di distribuzione, esclusiva, marketplace → **Partnership e Distribuzione**
 - Se la decisione riguarda raccolta di capitale, valutazione di un'offerta di investimento, bootstrap vs round → **Capitali e Finanza**
 
@@ -77,28 +77,28 @@ Se il contesto non è chiaro, presenta le opzioni all'utente con una riga di des
 
 ### Step 2 — Intake strutturato
 
-Carica e applica le 5 domande di intake dal file `modes/marketing-ai-strategy.md`. Le domande vengono poste in modo conversazionale, una alla volta o raggruppate se l'utente ha già fornito contesto ricco nel primo messaggio. Se l'utente è già stato esauriente su alcuni punti, l'orchestratore può saltare le domande già coperte, segnalando quali omette e perché.
+Carica e applica le 5 domande di intake dal file della modalità attiva (percorso indicato nella tabella di questo file, sezione "Modalità disponibili"). Le domande vengono poste in modo conversazionale, una alla volta o raggruppate se l'utente ha già fornito contesto ricco nel primo messaggio. Se l'utente è già stato esauriente su alcuni punti, l'orchestratore può saltare le domande già coperte, segnalando quali omette e perché.
 
 ### Step 3 — Convocazione advisor (4 in parallelo)
 
 Spawna 4 sub-agenti in parallelo, uno per advisor, ognuno con il proprio prompt template (definito nel file della modalità attiva). Ogni advisor produce una risposta di 200-300 parole, in italiano, senza preamboli. Il parallelo è obbligatorio: previene il bias di posizione (chi risponde per primo influenza gli altri).
 
-Prompt template generale per gli advisor:
+Usa i prompt template completi definiti nel file della modalità attiva (sezione "I 4 advisor", sotto-sezione "Prompt template" per ciascun advisor). Ogni template include lo stile di pensiero specifico e i guardrail obbligatori dell'advisor — non usare prompt generici che li ometterebbero.
+
+Struttura di riferimento dei prompt (ogni modalità la implementa con contenuto specifico):
 
 ```
 Sei {nome_advisor} in un council deliberativo.
 
 Il tuo stile di pensiero: {descrizione_stile}
 
-Un utente porta al council questa decisione:
-
----
-{brief_inquadrato}
----
+[brief inquadrato]
 
 Rispondi dalla tua prospettiva. Sii diretto e specifico. Non cercare 
 equilibrio, non hedge. Vai a fondo nel tuo angolo di analisi: gli altri 
 advisor copriranno gli angoli che tu non copri.
+
+[guardrail specifici dell'advisor, definiti nel file modalità]
 
 Lunghezza: 200-300 parole. Nessun preambolo, vai dritto all'analisi.
 ```
@@ -138,6 +138,10 @@ Lunghezza max 200 parole. Sii diretto.
 
 Un singolo agente chairman riceve: il brief, le 4 risposte de-anonimizzate (chi ha detto cosa), le 4 peer review. Produce il verdetto finale nella struttura fissa.
 
+Prima di costruire il prompt, controlla se il file della modalità attiva contiene una sezione `## Istruzioni per il chairman`. Se presente, appendi quelle istruzioni al prompt del chairman, dopo la struttura del verdetto e prima dell'istruzione finale "Sii diretto."
+
+I nomi degli advisor (`{advisor_N_nome}`) sono quelli definiti nel file della modalità attiva — vanno letti e iniettati nel prompt prima di inviarlo al chairman.
+
 Prompt template chairman:
 
 ```
@@ -156,8 +160,6 @@ RISPOSTE DEGLI ADVISOR:
 **{advisor_2_nome}:** {risposta_2}
 **{advisor_3_nome}:** {risposta_3}
 **{advisor_4_nome}:** {risposta_4}
-
-*(i nomi degli advisor sono quelli definiti nella modalità attiva)*
 
 PEER REVIEW:
 {tutte_le_4_review}
@@ -192,7 +194,7 @@ specialistica. Verificare aspetti compliance (GDPR/AI Act) con specialista
 quando rilevante.*
 
 Sii diretto. Non hedge. Se la maggioranza degli advisor dice una cosa ma 
-l'argomento del dissenter è più forte, puoi siderti col dissenter — 
+l'argomento del dissenter è più forte, puoi schierarti col dissenter — 
 spiegando perché. Il punto del council è dare chiarezza, non equilibrio 
 politicamente corretto.
 ```
