@@ -72,8 +72,12 @@ Il 5° advisor di ogni modalità (Espansore/Outsider) sfida il framing della dec
 - Focus italiano come moat (CCNL, GDPR, PNRR, AI Act UE): non togliere.
 - Non aggiungere modalità finché non c'è feedback dal sito.
 
-## Prossimo step: il sito
+## Il sito (repo gemello `deliberatosite`)
 
-Vedi `docs/design-handoff.md`. Due pagine: Home (il tool) + "Come funziona" (one-pager condivisibile). Stack suggerito: Next.js + Vercel + Anthropic SDK, Supabase opzionale.
+Il sito è costruito e in produzione su Vercel: repo `deliberatosite`
+(Next.js 16), con il council reale via `/api/council`. Modello economico
+deciso: reale ma protetto, gratuito con tetto anti-abuso (no auth/pagamenti).
 
-**Decisione aperta prima di costruire**: modello economico (gratuito / freemium / subscription) — condiziona tutta l'architettura.
+I `modes/*.md` di questo repo sono la **fonte di verità unica dei prompt**:
+il sito li rigenera in `lib/prompts.generated.ts` con `npm run gen:prompts`.
+Se modifichi un prompt advisor qui, rigenera lato sito.
