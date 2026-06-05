@@ -1,10 +1,14 @@
+<p align="center">
+  <img src="assets/og-image.png" alt="Deliberato — il council decisionale in italiano" width="640">
+</p>
+
 # Deliberato
 
 *Il council decisionale in italiano per founder, manager e professionisti.*
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Lingua: Italiano](https://img.shields.io/badge/Lingua-Italiano-blue.svg)](README.md)
-[![Claude Skill](https://img.shields.io/badge/Claude-Skill-orange.svg)](https://github.com/matteorondina/deliberato)
+[![Claude Skill](https://img.shields.io/badge/Claude-Skill-orange.svg)](https://github.com/matteorondina/deliberato-skill-claude)
 
 ---
 
@@ -21,7 +25,7 @@ Pensato per founder, manager e professionisti italiani che affrontano decisioni 
 Apri Claude e incolla:
 
 ```
-Installa la skill da questo repository GitHub: https://github.com/matteorondina/deliberato
+Installa la skill da questo repository GitHub: https://github.com/matteorondina/deliberato-skill-claude
 ```
 
 In alternativa, scarica `SKILL.md` e incollalo in Claude chiedendo di installarlo come skill.
