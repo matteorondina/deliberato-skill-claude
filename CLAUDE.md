@@ -6,7 +6,7 @@ Contesto tecnico del repo. Complementare al CLAUDE.md globale, non lo duplica.
 
 Claude Skill in italiano per decisioni strategiche di business. Convoca un council di advisor AI specializzati, esegue peer review anonima, e produce una sintesi del chairman con raccomandazione e piano d'azione. Target: founder, manager e professionisti italiani.
 
-- Repo: `github.com/matteorondina/deliberato`
+- Repo: `github.com/matteorondina/deliberato-skill-claude` (cartella locale: `deliberatoskill`)
 - Branch principale: `main`
 - Branch di sviluppo: `claude/deliberato-skill-setup-Bqy0u`
 - Licenza: MIT (Matteo Rondina)
@@ -27,6 +27,7 @@ examples/
   esempio-pricing-fast-council.md     esempio Fast Council (SaaS, aumento prezzi)
 docs/
   design-handoff.md                   brief per designer del sito
+assets/                               immagini per il README (og-image.png, icon-512.png)
 README.md
 LICENSE
 .gitignore                            esclude transcript-deliberato-*.md e active/
