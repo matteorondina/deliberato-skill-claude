@@ -94,6 +94,12 @@ Se il contesto non è chiaro, presenta le opzioni all'utente con una riga di des
 
 Carica e applica le 5 domande di intake dal file della modalità attiva (percorso indicato nella tabella di questo file, sezione "Modalità disponibili"). Le domande vengono poste in modo conversazionale, una alla volta o raggruppate se l'utente ha già fornito contesto ricco nel primo messaggio. Se l'utente è già stato esauriente su alcuni punti, l'orchestratore può saltare le domande già coperte, segnalando quali omette e perché.
 
+Prima di avviare il council, verifica che la decisione soddisfi entrambe le condizioni:
+1. **Trade-off genuino** — esistono almeno due opzioni con vantaggi e costi reali; non c'è una risposta già ovvia o quasi scontata.
+2. **Perimetro professionale** — la decisione rientra in una delle 6 modalità (business, strategia aziendale, professionale). Decisioni personali o familiari esulano dal perimetro.
+
+Se una condizione non è soddisfatta, segnala: *"Questa decisione non sembra avere un trade-off deliberabile [o: non rientra nel perimetro di Deliberato]. Vuoi comunque procedere con il council?"* e attendi la risposta dell'utente prima di continuare.
+
 ### Step 3 — Convocazione advisor (5 in parallelo)
 
 Spawna 5 sub-agenti in parallelo, uno per advisor, ognuno con il proprio prompt template (definito nel file della modalità attiva). Ogni advisor produce una risposta di 200-300 parole, in italiano, senza preamboli. Il parallelo è obbligatorio: previene il bias di posizione (chi risponde per primo influenza gli altri).
@@ -116,6 +122,17 @@ advisor copriranno gli angoli che tu non copri.
 [guardrail specifici dell'advisor, definiti nel file modalità]
 
 Lunghezza: 200-300 parole. Nessun preambolo, vai dritto all'analisi.
+```
+
+**Presentazione in chat degli advisor:** ogni risposta viene mostrata come accordion `<details>/<summary>`. Il `<summary>` riporta il nome dell'advisor e la sua idea chiave in max 80 parole. La risposta completa è visibile espandendo l'accordion ed è usata integralmente nella peer review — non viene abbreviata internamente.
+
+```html
+<details>
+<summary><strong>[Nome Advisor]</strong> — [punto principale in 1-2 frasi, max 80 parole]</summary>
+
+[risposta completa 200-300 parole]
+
+</details>
 ```
 
 ### Step 4 — Peer review anonima
@@ -237,6 +254,12 @@ Poni solo due domande, in un unico messaggio:
 
 Se l'utente ha già fornito entrambe le informazioni nel messaggio iniziale, salta l'intake e segnala: *"Ho abbastanza contesto per procedere."*
 
+Prima di avviare il council, verifica che la decisione soddisfi entrambe le condizioni:
+1. **Trade-off genuino** — esistono almeno due opzioni con vantaggi e costi reali; non c'è una risposta già quasi scontata.
+2. **Perimetro professionale** — la decisione rientra in una delle 6 modalità (business, strategia aziendale, professionale). Decisioni personali o familiari esulano dal perimetro.
+
+Se una condizione non è soddisfatta, segnala: *"Questa decisione non sembra avere un trade-off deliberabile [o: non rientra nel perimetro di Deliberato]. Vuoi comunque procedere con il council?"* e attendi risposta.
+
 ### FC-Step 3 — Convocazione 3 advisor (in parallelo)
 
 Spawna 3 sub-agenti in parallelo usando i **primi 3 advisor** definiti nel file della modalità attiva (Advisor 1, 2, 3). Stessi prompt template completi del Full Council — inclusi guardrail specifici. Lunghezza invariata: 200-300 parole ciascuno.
@@ -251,6 +274,8 @@ I primi 3 advisor per modalità:
 | Direzione Strategica | L'Analista dei Segnali | Il Guardiano del Focus | Il Costruttore di Moat |
 | Partnership e Distribuzione | Lo Stratega del Canale | Il Negoziatore | Il Realista delle Dipendenze |
 | Capitali e Finanza | Il Custode della Missione | Il Matematico del Capitale | Il Conoscitore di Investitori |
+
+**Presentazione in chat degli advisor:** stessa struttura accordion del Full Council — `<details>/<summary>` con idea chiave in max 80 parole nel summary, risposta completa dentro.
 
 ### FC-Step 4 — Chairman synthesis diretta
 
