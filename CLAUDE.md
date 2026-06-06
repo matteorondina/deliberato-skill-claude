@@ -63,6 +63,8 @@ Il 5° advisor di ogni modalità (Espansore/Outsider) sfida il framing della dec
 - **`## Istruzioni per il chairman`** — sezione opzionale nei file modalità. Se presente, il chairman la applica dopo la struttura standard. Implementata in `capitali-finanza.md` (disclaimer legale/fiscale rafforzato).
 - **Guardrail nei prompt template** — ogni advisor ha guardrail specifici embedded nel proprio prompt, non solo nelle note a fondo file. Es: GDPR/AI Act → Il Contrarian; debito tecnico → Il Realista Operativo; costo opportunità → L'Economista Pragmatico.
 - **Transcript opzionale** — su richiesta dell'utente, la sessione viene salvata come `transcript-deliberato-YYYYMMDD-HHmm.md` (escluso da `.gitignore`).
+- **Accordion advisor** — le risposte degli advisor sono mostrate come `<details>/<summary>` (max 80 parole nel summary visibile, risposta completa 200-300 parole dentro). La risposta completa è usata integralmente dalla peer review. Serve a non esaurire il budget di output della sessione prima del chairman: la peer review da sola occupa ~1.000 parole (5 reviewer × 200), e senza accordion gli advisor ne aggiungevano altre ~1.250.
+- **Guard intake** — prima di avviare il council (Step 2 Full e FC-Step 2 Fast), l'orchestratore verifica: (1) trade-off genuino tra almeno due opzioni con costi reali, (2) perimetro professionale/business. Se manca una condizione, chiede conferma esplicita all'utente prima di procedere.
 
 ## Decisioni di prodotto ferme
 
@@ -72,6 +74,7 @@ Il 5° advisor di ogni modalità (Espansore/Outsider) sfida il framing della dec
 - Niente modalità "AI" separata (coperta orizzontalmente). Niente "Go-to-market" per ora (solo dopo feedback d'uso).
 - Focus italiano come moat (CCNL, GDPR, PNRR, AI Act UE): non togliere.
 - Non aggiungere modalità finché non c'è feedback dal sito.
+- La skill è per decisioni professionali/business (le 6 modalità). Decisioni personali o familiari non rientrano nel perimetro — il guard all'intake lo segnala esplicitamente.
 
 ## Il sito (repo gemello `deliberatosite`)
 
