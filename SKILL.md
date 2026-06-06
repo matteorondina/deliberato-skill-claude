@@ -121,18 +121,7 @@ advisor copriranno gli angoli che tu non copri.
 
 [guardrail specifici dell'advisor, definiti nel file modalità]
 
-Lunghezza: 200-300 parole. Nessun preambolo, vai dritto all'analisi.
-```
-
-**Presentazione in chat degli advisor:** ogni risposta viene mostrata come accordion `<details>/<summary>`. Il `<summary>` riporta il nome dell'advisor e la sua idea chiave in max 80 parole. La risposta completa è visibile espandendo l'accordion ed è usata integralmente nella peer review — non viene abbreviata internamente.
-
-```html
-<details>
-<summary><strong>[Nome Advisor]</strong> — [punto principale in 1-2 frasi, max 80 parole]</summary>
-
-[risposta completa 200-300 parole]
-
-</details>
+Lunghezza: max 120 parole. Nessun preambolo, vai dritto all'analisi.
 ```
 
 ### Step 4 — Peer review anonima
@@ -164,7 +153,7 @@ Rispondi a queste tre domande. Sii specifico. Cita le risposte per lettera.
 3. Cosa hanno mancato TUTTE e cinque le risposte e che il council dovrebbe 
    considerare?
 
-Lunghezza max 200 parole. Sii diretto.
+Lunghezza max 100 parole. Sii diretto.
 ```
 
 ### Step 5 — Chairman synthesis
@@ -274,8 +263,6 @@ I primi 3 advisor per modalità:
 | Direzione Strategica | L'Analista dei Segnali | Il Guardiano del Focus | Il Costruttore di Moat |
 | Partnership e Distribuzione | Lo Stratega del Canale | Il Negoziatore | Il Realista delle Dipendenze |
 | Capitali e Finanza | Il Custode della Missione | Il Matematico del Capitale | Il Conoscitore di Investitori |
-
-**Presentazione in chat degli advisor:** stessa struttura accordion del Full Council — `<details>/<summary>` con idea chiave in max 80 parole nel summary, risposta completa dentro.
 
 ### FC-Step 4 — Chairman synthesis diretta
 
