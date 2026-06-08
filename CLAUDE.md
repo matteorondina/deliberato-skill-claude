@@ -25,8 +25,6 @@ modes/                                una modalità per file
 examples/
   esempio-stack-ai-mvp.md             esempio Full Council (HR, build vs buy AI)
   esempio-pricing-fast-council.md     esempio Fast Council (SaaS, aumento prezzi)
-docs/
-  design-handoff.md                   brief per designer del sito
 assets/                               immagini per il README (og-image.png, icon-512.png)
 README.md
 LICENSE
