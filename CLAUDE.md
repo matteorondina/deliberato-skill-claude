@@ -8,7 +8,6 @@ Claude Skill in italiano per decisioni strategiche di business. Convoca un counc
 
 - Repo: `github.com/matteorondina/deliberato-skill-claude` (cartella locale: `deliberatoskill`)
 - Branch principale: `main`
-- Branch di sviluppo: `claude/deliberato-skill-setup-Bqy0u`
 - Licenza: MIT (Matteo Rondina)
 
 ## Struttura repo
